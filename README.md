@@ -12,11 +12,17 @@ Check `Dockefile` to see the changes.
 
 * To start this server just run docker-compose including UID, GID during compose stack up and down to keep same permissions on files created.
 
-```UID=$UID GID=$GID docker-compose up -d```
+```
+UID=$UID GID=$GID docker-compose up -d
+```
 
-```UID=$UID GID=$GID docker-compose down```
+```
+UID=$UID GID=$GID docker-compose down
+```
 
 
 ### To do
+- Build docker using non-root user
+- Server is using /home/root/.config, it should use /home/coder/.config
 - Add traefik to access using code.domain.com
 - Add extensions
