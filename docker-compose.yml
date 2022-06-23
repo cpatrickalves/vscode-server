@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  vscode:
+    image: codercom/code-server:latest
+    container_name: vscode-server
+    user: $UID:$GID
+    tty: true
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - $HOME/.config:/home/coder/.config
+    - ${PWD}:/home/coder/
+    ports:
+    - 9999:8080
+    restart: unless-stopped
