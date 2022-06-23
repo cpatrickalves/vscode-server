@@ -2,14 +2,17 @@ version: '3.7'
 
 services:
   vscode:
-    image: codercom/code-server:latest
+    build: .
+    image: cpatrickalves/code-server:4.4.0
     container_name: vscode-server
     user: $UID:$GID
     tty: true
     volumes:
     - /etc/localtime:/etc/localtime:ro
-    - $HOME/.config:/home/coder/.config
-    - ${PWD}:/home/coder/
+    - ./config/.config:/home/coder/.config
+    - ./config/.zshrc:/home/coder/.zshrc
+    - ./config/.p10k.zsh:/home/coder/.p10k.zsh
+    - $HOME/dev/:/home/coder/dev/
     ports:
     - 9999:8080
     restart: unless-stopped
