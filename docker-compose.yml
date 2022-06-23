@@ -9,7 +9,7 @@ services:
     tty: true
     volumes:
     - /etc/localtime:/etc/localtime:ro
-    - ./config/code.cfg:/home/coder/.config
+    - ./config/config.yaml:/home/coder/.config/code-server/config.yaml
     - ./config/zshrc:/home/coder/.zshrc
     - ./config/p10k.zsh:/home/coder/.p10k.zsh
     - $HOME/dev/:/home/coder/dev/
