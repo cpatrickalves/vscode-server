@@ -9,9 +9,9 @@ services:
     tty: true
     volumes:
     - /etc/localtime:/etc/localtime:ro
-    - ./config/.config:/home/coder/.config
-    - ./config/.zshrc:/home/coder/.zshrc
-    - ./config/.p10k.zsh:/home/coder/.p10k.zsh
+    - ./config/config:/home/coder/.config
+    - ./config/zshrc:/home/coder/.zshrc
+    - ./config/p10k.zsh:/home/coder/.p10k.zsh
     - $HOME/dev/:/home/coder/dev/
     ports:
     - 9999:8080
