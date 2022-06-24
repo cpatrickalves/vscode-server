@@ -6,12 +6,15 @@ services:
     image: cpatrickalves/code-server:4.4.0
     container_name: vscode-server
     user: $UID:$GID
+    environment:
+      DOCKER_USER: $USER
     tty: true
     volumes:
     - /etc/localtime:/etc/localtime:ro
     - ./config/config.yaml:/home/coder/.config/code-server/config.yaml
     - ./config/zshrc:/home/coder/.zshrc
     - ./config/p10k.zsh:/home/coder/.p10k.zsh
+    - ./extensions:/home/coder/.vscode/extensions
     - $HOME/dev/:/home/coder/dev/
     ports:
     - 9999:8080
